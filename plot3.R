@@ -55,9 +55,9 @@ plot3<-function(){
      png("plot3.png", units = "px", width=480, height=480)
 
      ## Plot graph     
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_1), ylab="Energy sub metering",xlab="",type="l", ylim=c(0,20))
-     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_2), col="red", xlab="",type="l")
-     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_3), col="blue", xlab="",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_1)), ylab="Energy sub metering",xlab="",type="l")
+     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_2)), col="red", xlab="",type="l")
+     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_3)), col="blue", xlab="",type="l")
      legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=c(1,1,1), col=c("black","blue","red"))       
 
      ## close graphic device to save PNG

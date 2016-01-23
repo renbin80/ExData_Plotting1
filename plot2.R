@@ -55,7 +55,7 @@ plot2<-function(){
      png("plot2.png", units = "px", width=480, height=480)
      
      ## Plot graph
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Global_active_power), ylab="Global Active Power (kilowatts)",xlab="",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Global_active_power)), ylab="Global Active Power (kilowatts)",xlab="",type="l")
 
      ## close graphic device to save PNG
      dev.off()

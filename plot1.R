@@ -55,7 +55,7 @@ plot1<-function(){
      png("plot1.png", units = "px", width=480, height=480)
      
      ## Plot graph
-     hist(as.numeric(m$Global_active_power), col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power", breaks=12)
+     hist(as.numeric(as.character(m$Global_active_power)), col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power", breaks=12)
 
      ## close graphic device to save PNG
      dev.off()

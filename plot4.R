@@ -58,20 +58,20 @@ plot4<-function(){
      par(mfcol=c(2,2))
      
      ## First graph
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Global_active_power), ylab="Global Active Power (kilowatts)",xlab="",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Global_active_power)), ylab="Global Active Power (kilowatts)",xlab="",type="l")
 
      ## Second graph
      
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_1), ylab="Energy sub metering",xlab="",type="l", ylim=c(0,25))
-     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_2), col="red", xlab="",type="l")
-     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Sub_metering_3), col="blue", xlab="",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_1)), ylab="Energy sub metering",xlab="",type="l")
+     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_2)), col="red", xlab="",type="l")
+     lines(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Sub_metering_3)), col="blue", xlab="",type="l")
      legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=c(1,1,1), col=c("black","blue","red"))       
 
      ## Third graph
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Voltage), ylab="Voltage",xlab="datetime",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Voltage)), ylab="Voltage",xlab="datetime",type="l")
 
      ## Fourth graph
-     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(m$Global_reactive_power), ylab="Global_reactive_power", xlab="datetime",type="l")
+     plot(strptime(paste(m$Date,m$Time,sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(m$Global_reactive_power)), ylab="Global_reactive_power", xlab="datetime",type="l")
 
      ## close graphic device to save PNG
      dev.off()
